@@ -26,15 +26,18 @@ import static org.jboss.sasl.anonymous.AbstractAnonymousFactory.ANONYMOUS;
 import static org.jboss.sasl.plain.PlainServerFactory.PLAIN;
 import static org.jboss.sasl.digest.DigestMD5ServerFactory.DIGEST_MD5;
 import static org.jboss.sasl.localuser.LocalUserSaslFactory.JBOSS_LOCAL_USER;
+import static org.jboss.sasl.gssapi.GssapiServerFactory.GSSAPI;
 
 import javax.security.sasl.SaslClientFactory;
 import javax.security.sasl.SaslServerFactory;
+
 import java.security.Provider;
 
 import org.jboss.sasl.anonymous.AnonymousClientFactory;
 import org.jboss.sasl.anonymous.AnonymousServerFactory;
 import org.jboss.sasl.digest.DigestMD5ClientFactory;
 import org.jboss.sasl.digest.DigestMD5ServerFactory;
+import org.jboss.sasl.gssapi.GssapiServerFactory;
 import org.jboss.sasl.plain.PlainServerFactory;
 import org.jboss.sasl.localuser.LocalUserClientFactory;
 import org.jboss.sasl.localuser.LocalUserServerFactory;
@@ -68,6 +71,7 @@ public final class JBossSaslProvider extends Provider {
         put(SASL_SERVER_FACTORY + DOT + DIGEST_MD5, DigestMD5ServerFactory.class.getName());
         put(SASL_SERVER_FACTORY + DOT + JBOSS_LOCAL_USER, LocalUserServerFactory.class.getName());
         put(SASL_CLIENT_FACTORY + DOT + JBOSS_LOCAL_USER, LocalUserClientFactory.class.getName());
+        put(SASL_SERVER_FACTORY + DOT + GSSAPI, GssapiServerFactory.class.getName());
     }
 
     /**

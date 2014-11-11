@@ -22,6 +22,7 @@
 
 # our SASL factory providers (Ordered)
 org.jboss.sasl.localuser.LocalUserServerFactory
+org.jboss.sasl.gssapi.GssapiServerFactory
 org.jboss.sasl.digest.DigestMD5ServerFactory
 org.jboss.sasl.plain.PlainServerFactory
 org.jboss.sasl.anonymous.AnonymousServerFactory
